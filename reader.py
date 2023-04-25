@@ -58,20 +58,21 @@ def tweet():
 def button(msg,x,y,w,h,ic,ac,screen,action=None):
     mouse = pygame.mouse.get_pos()
     click = pygame.mouse.get_pressed()
+    font = pygame.font.Font('freesansbold.ttf', 20)
     #print(click)
     if x+w > mouse[0] > x and y+h > mouse[1] > y:
         pygame.draw.rect(screen, ac,(x,y,w,h))
+        text = font.render(msg, True, "white", ac)
 
         if click[0] == 1 and action != None:
             action()         
     else:
         pygame.draw.rect(screen, ic,(x,y,w,h))
+        text = font.render(msg, True, "white", ic)
 
-    #https://stackoverflow.com/questions/20842801/how-to-display-text-in-pygame
-    #smallText = pygame.font.SysFont("comicsansms",20)
-    #textSurf, textRect = text_objects(msg, smallText)
-   #textRect.center = ( (x+(w/2)), (y+(h/2)) )
-    #screen.blit(textSurf, textRect)
+    textRect = text.get_rect()
+    textRect.center = ( (x+(w/2)), (y+(h/2)) )
+    screen.blit(text, textRect)
 
 def email_setup(screen):
     font = pygame.font.SysFont(None, 25)
@@ -131,7 +132,8 @@ def main():
 
 		screen.blit(text, textRect)
 
-		#button("email",150,450,100,50,"green","blue", screen)
+		button("email",150,450,100,50,"red","lightcoral", screen)
+                button("twitter",250,450,100,50,"blue","lightblue", screen)
 
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
