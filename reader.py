@@ -8,15 +8,11 @@ from email.mime.image import MIMEImage
 
 
 
-def email_setup(screen):
-	sender = "mrsbearrealofficial@gmail.com"
-	password = "cxybmstangojtvnq"
-	recipients = input(screen)
-	return sender, password
-
-def send_email(sender, recipient, password, image_path):
+def send_email(recipient, image_path):
 	subject = "subject"
 	body = "includes image"
+	sender = "mrsbearrealofficial@gmail.com"
+	password = "cxybmstangojtvnq"
 	with open(image_path, 'rb') as f:
 		image_part = MIMEImage(f.read())
 	
@@ -74,11 +70,10 @@ def button(msg,x,y,w,h,ic,ac,screen,action=None):
     #https://stackoverflow.com/questions/20842801/how-to-display-text-in-pygame
     #smallText = pygame.font.SysFont("comicsansms",20)
     #textSurf, textRect = text_objects(msg, smallText)
-    #textRect.center = ( (x+(w/2)), (y+(h/2)) )
+   #textRect.center = ( (x+(w/2)), (y+(h/2)) )
     #screen.blit(textSurf, textRect)
 
-def input(screen): #https://stackoverflow.com/questions/27713855/how-to-get-an-input-from-user-in-pygame-and-save-it-as-a-variable
-    word="please enter your email:"
+def email_setup(screen):
     font = pygame.font.SysFont(None, 25)
     text = font.render("{}".format(word), True, "red")
     screen.blit(text,(300,400))
@@ -118,18 +113,40 @@ def main():
 	running = True
 	
 	#set up authentification information
-	sender, password, recipients = email_setup(screen)
+	#recipient = email_setup(screen)
 
 	#periodically send image
 	image_path = "cat.jpg"
-	# send_email(sender, recipients, password, image_path)
+	# send_email(recipient, image_path)
+
+	font = pygame.font.Font('freesansbold.ttf', 32)
+	text = font.render('Welcome to BE(A)Real!', True, "black", "white")
+	textRect = text.get_rect()
+	textRect.center = (400 // 2, 300 // 2)
         
 
 	while(running):
+		
+		screen.fill("white")
+
+		screen.blit(text, textRect)
+
+		#button("email",150,450,100,50,"green","blue", screen)
 
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
 				running = False
+			pygame.display.update()
+
+
+		clock.tick(60)
+
+
+if __name__ == "__main__":
+	main()
+
+#https://stackoverflow.com/questions/27713855/how-to-get-an-input-from-user-in-pygame-and-save-it-as-a-variable
+
 			#https://stackoverflow.com/questions/10990137/pygame-mouse-clicking-detection
 		
 
@@ -143,11 +160,3 @@ def main():
 			#if picture, start countdown clock
 
 			#if button, wait 1 minute
-		button("GO!",150,450,100,50,"green","blue", screen)
-
-		pygame.display.update()
-		clock.tick(60)
-
-
-if __name__ == "__main__":
-	main()
