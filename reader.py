@@ -59,6 +59,7 @@ def button(msg,x,y,w,h,ic,ac,screen,action=None):
     mouse = pygame.mouse.get_pos()
     click = pygame.mouse.get_pressed()
     font = pygame.font.Font('freesansbold.ttf', 20)
+    
     #print(click)
     if x+w > mouse[0] > x and y+h > mouse[1] > y:
         pygame.draw.rect(screen, ac,(x,y,w,h))
@@ -123,7 +124,7 @@ def main():
 	font = pygame.font.Font('freesansbold.ttf', 32)
 	text = font.render('Welcome to BE(A)Real!', True, "black", "white")
 	textRect = text.get_rect()
-	textRect.center = (400 // 2, 300 // 2)
+	textRect.center = (800 // 2, 300 // 2)
         
 
 	while(running):
@@ -132,14 +133,22 @@ def main():
 
 		screen.blit(text, textRect)
 
-		button("email",150,450,100,50,"lightcoral","red", screen)
-		button("twitter",250,450,100,50,"lightblue","blue", screen)
+		button("email",300,450,100,50,"lightcoral","red", screen)
+		button("twitter",400,450,100,50,"lightblue","blue", screen)
 
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
 				running = False
 			pygame.display.update()
+		ticks=pygame.time.get_ticks()
 
+		seconds=int(ticks/1000 % 60)
+		minutes=int(ticks/60000 % 24)
+		out='{minutes:02d}:{seconds:02d}'.format(minutes=minutes, seconds=seconds)
+		font_2=pygame.freetype.SysFont(None, 40)
+		font_2.origin=True
+		font_2.render_to(screen, (360, 250), out, "black")
+		pygame.display.flip()
 
 		clock.tick(60)
 
