@@ -132,8 +132,8 @@ def main():
 
 		screen.blit(text, textRect)
 
-		button("email",150,450,100,50,"red","lightcoral", screen)
-		button("twitter",250,450,100,50,"blue","lightblue", screen)
+		button("email",150,450,100,50,"lightcoral","red", screen)
+		button("twitter",250,450,100,50,"lightblue","blue", screen)
 
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
