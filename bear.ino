@@ -76,9 +76,14 @@ const char index_html[] PROGMEM = R"rawliteral(
     </p>
   </div>
   <div id="img_show"><img src="saved-photo" id="photo" width="70%"></div>
+  <a id="dwnl" href = "saved-photo"
+      Download = "saved-photo">
+         <button type = "button"> Download </button>
+    </a>
 </body>
 <script>
   var deg = 0;
+  
   function capturePhoto() {
     console.log("capture photo");
     var xhr = new XMLHttpRequest();
@@ -98,6 +103,7 @@ function timer(t){
     // var countDownDate = Date().getTime();
     document.getElementById("tempo").innerHTML = "";
     document.getElementById("img_show").innerHTML = "";
+    document.getElementById("dwnl").innerHTML = "";
     var start = new Date().getTime();
     var diff = t;
     var countDownDate = new Date(start+ diff*60000);
