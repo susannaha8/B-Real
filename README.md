@@ -23,12 +23,13 @@ For the code to work on your device, adjust the `ssid` and `password` with your 
 
 ## Additional Code: Photos via Email
 
+We originally wanted to send the photos taken immediately via email or twitter, and provide a PyGame GUI. We were able to save photos to the ESP32 with the `capturePhotoSaveSpiffs()`, and send automatic emails from the ESP32 when a picture was taken with the ESP-Mail-Client library, but somehow we were unable to send the attached image. We chose instead to upload the image to a webpage and give users the option to download the image, but if users are interested in BE(A)Real specifically for the automatic posts and automatic downloads, we wrote an additional python script in `email.py` that can be run separately on your computer, adapted from https://www.geeksforgeeks.org/how-to-download-all-images-from-a-web-page-in-python/. Just provide the email you would like to send the photo to and the IP address of the ESP32 server, and the code will loop until the photo is posted, write the photo into a new folder called `images`, and send the photo to the address you provided (sent from mrsbearrealofficial@gmail.com). To send automatic emails from python, we needed to get an App Password for our Bear account for google security resasons.
 
 <img src="/email.png" alt="email" style="height: 300px;"/>
 
 ## Usage
 
-Upload the code to your ESP32 and click the button on it. Now the server is up, and the IP address that you need to use to connect to the server is displayed in Arduino. Go to that address (ex. http://172.20.10.7) and you should see the BE(A)Real homepage. Face the bear with the ESP32 toward you and select either the 30 minute timer or the 60 minute timer. Once clicked, the timer will begin and you can begin studying. After the timer is up, click "get photo" to view the image that was taken of you while you were studying. You can download this image with the button at the bottom of the page.
+Upload the code to your ESP32 and click the button on the ESP32. Now the server is up, and the IP address that you need to use to connect to the server is displayed in Arduino. Go to that address (ex. http://172.20.10.7) and you should see the BE(A)Real homepage. Face the bear with the ESP32 toward you and select either the 30 minute timer or the 60 minute timer. Once clicked, the timer will begin and you can begin studying. After the timer is up, click "get photo" to view the image that was taken of you while you were studying. You can download this image with the button at the bottom of the page.
 
 <img src="/website.png" alt="website" style="height: 300px;"/>
 
