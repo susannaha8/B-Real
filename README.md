@@ -33,7 +33,7 @@ Just provide the email you would like to send the photo to and the IP address of
 
 ## Enclosure
 
-To encourage maximum studying, we have Millie the Panda (Millie the Bear's cousin) keeping a watchful eye. The ESP32 cam is hidden in her Barnard t-shirt, with the power cable hidden through her sleeve. Make sure she is facing you to get the best picture of you studying.
+To encourage maximum studying, we brought Millie the Panda (Millie the Bear's cousin) to keep a watchful eye. The ESP32 cam is hidden in her Barnard t-shirt, with the power cable hidden through her sleeve. Make sure she is facing you to get the best picture of you studying.
 
 <img src="/bear.png" alt="bear" style="height: 300px;"/>
 
