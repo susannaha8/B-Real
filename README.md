@@ -23,9 +23,19 @@ For the code to work on your device, adjust the `ssid` and `password` with your 
 
 ## Additional Code: Photos via Email
 
-We originally wanted to send the photos taken immediately via email or twitter, and provide a PyGame GUI. We were able to save photos to the ESP32 with the `capturePhotoSaveSpiffs()`, and send automatic emails from the ESP32 when a picture was taken with the ESP-Mail-Client library, but somehow we were unable to send the attached image. We chose instead to upload the image to a webpage and give users the option to download the image, but if users are interested in BE(A)Real specifically for the automatic posts and automatic downloads, we wrote an additional python script in `email.py` that can be run separately on your computer, adapted from https://www.geeksforgeeks.org/how-to-download-all-images-from-a-web-page-in-python/. Just provide the email you would like to send the photo to and the IP address of the ESP32 server, and the code will loop until the photo is posted, write the photo into a new folder called `images`, and send the photo to the address you provided (sent from mrsbearrealofficial@gmail.com). To send automatic emails from python, we needed to get an App Password for our Bear account for google security resasons.
+We originally wanted to send the photos taken immediately via email or twitter, and provide a PyGame GUI. We were able to save photos to the ESP32 with the `capturePhotoSaveSpiffs()`, and send automatic emails from the ESP32 when a picture was taken with the ESP-Mail-Client library, but somehow we were unable to send the attached image. 
+
+We chose instead to upload the image to a webpage and give users the option to download the image, but if users are interested in BE(A)Real specifically for the automatic posts and automatic downloads, we wrote an additional python script in `email.py` that can be run separately on your computer, adapted from https://www.geeksforgeeks.org/how-to-download-all-images-from-a-web-page-in-python/. 
+
+Just provide the email you would like to send the photo to and the IP address of the ESP32 server, and the code will loop until the photo is posted, write the photo into a new folder called `/images`, and send the photo to the address you provided (sent from mrsbearrealofficial@gmail.com). To send automatic emails from python, we needed to get an App Password for our Bear account for google security resasons.
 
 <img src="/email.png" alt="email" style="height: 300px;"/>
+
+## Enclosure
+
+To encourage maximum studying, we have Millie the Panda (Millie the Bear's cousin) keeping a watchful eye. The ESP32 cam is hidden in her Barnard t-shirt, with the power cable hidden through her sleeve. Make sure she is facing you to get the best picture of you studying.
+
+<img src="/bear.png" alt="bear" style="height: 300px;"/>
 
 ## Usage
 
@@ -35,4 +45,3 @@ Upload the code to your ESP32 and click the button on the ESP32. Now the server 
 
 Happy studying!
 
-<img src="/bear.png" alt="bear" style="height: 300px;"/>
