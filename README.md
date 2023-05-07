@@ -12,6 +12,8 @@ Connect the camera itself to the ESP32 and use a Micro USB to USB cable to conne
 
 ### Select Board & Install Libraries
 
+Select the ESP-Wrover-Kit as your board, select your port for serial input, and install asyncTCP and ESPAsyncWebServer libraries in the Arduino API. From there, you should be able to upload the code. 
+
 ### How does the code work?
 
 The code begins by initing the camera, starting the web server, and mounting SPIFFS, a file system for the ESP32. On a GET request from a client (ex. a browser trying to reach the webpage), the ESP32 sends an HTML page saved in the variable `index_html`. When the client clicks one of the timer buttons, the `timer()` function begins. After some time, the `capturePhoto()` function in the HTML is called, which allows the ESP32 to change the `takeNewPhoto` flag. `capturePhotoSaveSpiffs()`, which is sitting in a loop on the ESP32 depenent on the flag, finally gets called and takes the photo. After the timer on the webpage is up, a new button appears that refreshes the page and the photo appears. 
