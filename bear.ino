@@ -25,8 +25,8 @@
 #include <FS.h>
 
 // Replace with your network credentials
-const char* ssid = "dani";
-const char* password = "bat!9008";
+const char* ssid = "YOUR_SSID";
+const char* password = "YOUR_PASSWORD";
 
 // Create AsyncWebServer object on port 80
 AsyncWebServer server(80);
@@ -72,7 +72,7 @@ const char index_html[] PROGMEM = R"rawliteral(
     <div id="get photo"> </div>
     <p id="tempo">
       <button onclick="timer(60);">Start (60 min) </button>
-      <button onclick="timer(2);">Start (30 min)</button>
+      <button onclick="timer(30);">Start (30 min)</button>
     </p>
   </div>
   <div id="img_show"><img src="saved-photo" id="photo" width="70%"></div>
