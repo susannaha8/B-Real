@@ -11,8 +11,7 @@ Connect the camera itself to the ESP32 and use a Micro USB to USB cable to conne
 ## Software Setup
 
 ### Select Board & Install Libraries
-
-Select the ESP-Wrover-Kit as your board, select your port for serial input, and install asyncTCP and ESPAsyncWebServer libraries in the Arduino API. From there, you should be able to upload the code after making the necessary modifications. 
+We used the Arduino IDE for uploading the code to the ESP32-cam. For the setup, first add the ESP32 by Espressif Systems (version > 2.0), using the Arduino IDE board manager. Select the ESP-Wrover-Kit as your board, select your port for serial input, and install asyncTCP and ESPAsyncWebServer libraries in the Arduino API. From there, you should be able to upload the code after making the necessary modifications. 
 
 ### How does the code work?
 
