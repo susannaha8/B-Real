@@ -8,7 +8,7 @@ Connect the camera itself to the ESP32 and use a Micro USB to USB cable to conne
 
 ## Software Setup
 
-### Install Libraries
+### Select Board & Install Libraries
 
 ### How does the code work?
 
